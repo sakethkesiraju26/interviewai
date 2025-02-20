@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewAI | Intelligent Interview Infrastructure</title>
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.discordapp.com">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <meta name="description" content="AI-powered interview infrastructure for consistent, unbiased hiring at scale">
+    
+    <!-- Add favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Add social media meta tags -->
+    <meta property="og:title" content="InterviewAI | Intelligent Interview Infrastructure">
+    <meta property="og:description" content="AI-powered interview infrastructure for consistent, unbiased hiring at scale">
+    <meta property="og:image" content="/path/to/social-preview.png">
+    <meta property="og:url" content="https://interviewai.com">
+    
+    <!-- Add loading optimization for images -->
+    <link rel="preload" as="image" href="path/to/dashboard-metrics.png">
+    
+    <!-- Add analytics placeholder -->
+    <script async src="analytics.js"></script>
+
+    <!-- Add these styles in the head section -->
+    <style>
+        /* More refined gradient animations */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #1a365d, #2563eb, #1e40af, #1e3a8a);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating card effect */
+        .float-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .float-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Premium button style */
+        .premium-button {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+        .premium-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -2px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Subtle background patterns */
+        .pattern-bg {
+            background-image: radial-gradient(#2563eb 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-position: 0 0;
+            opacity: 0.05;
+        }
+
+        /* Refined text gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth transitions */
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Card hover effects */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Enterprise-style button */
+        .enterprise-button {
+            background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        .enterprise-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-lg font-bold text-blue-600">InterviewAI</span>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#product" class="text-sm font-medium text-gray-500 hover:text-gray-900">
+                        Product
+                    </a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-500 hover:text-gray-900">
+                        Pricing
+                    </a>
+                    <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="px-4 py-2 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Get started
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#product" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Product</a>
+                    <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pricing</a>
+                    <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Get started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="relative overflow-hidden">
+            <div class="gradient-bg py-24 md:py-32">
+                <div class="pattern-bg absolute inset-0"></div>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="md:flex md:items-center md:space-x-16 relative">
+                        <div class="md:w-1/2 relative z-10">
+                            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+                                AI-Powered Interview <span class="text-blue-200">Infrastructure</span>
+                            </h1>
+                            <p class="mt-6 text-xl text-blue-100 leading-relaxed max-w-xl">
+                                Transform your hiring process with enterprise-grade AI interviews. Scale your interviews with confidence, security, and consistency.
+                            </p>
+
+                            <div class="mt-10 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                                <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-blue-600 hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl">
+                                    Get Started
+                                    <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                    </svg>
+                                </a>
+                                <a href="#" class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-lg border-2 border-white/20 text-white hover:bg-white/10 transition-all">
+                                    Watch Demo
+                                    <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 md:mt-0 md:w-1/2 relative z-0">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl transform rotate-6 scale-105 opacity-20"></div>
+                                <div class="relative rounded-xl shadow-2xl bg-white p-8">
+                                    <!-- Interview Interface Mockup -->
+                                    <div class="space-y-6">
+                                        <!-- Top Navigation -->
+                                        <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                                            <div class="flex items-center space-x-4">
+                                                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                                                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <div class="text-sm font-medium text-gray-900">Software Engineer Interview</div>
+                                                    <div class="flex items-center space-x-2 mt-1">
+                                                        <div class="h-2 w-2 bg-green-500 rounded-full"></div>
+                                                        <span class="text-xs text-gray-500">AI Interviewer Active</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center space-x-3">
+                                                <span class="text-xs font-medium text-gray-500">25:13</span>
+                                                <button class="p-2 hover:bg-gray-100 rounded-full">
+                                                    <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Progress Indicator -->
+                                        <div class="relative">
+                                            <div class="flex justify-between mb-2">
+                                                <span class="text-xs font-medium text-gray-500">Progress</span>
+                                                <span class="text-xs font-medium text-blue-600">3 of 8</span>
+                                            </div>
+                                            <div class="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                                                <div class="h-full bg-blue-500 rounded-full" style="width: 37.5%"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Current Question -->
+                                        <div class="bg-gray-50 rounded-xl p-6 space-y-4">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-sm font-medium text-gray-500">Current Question</span>
+                                                <span class="text-xs font-medium text-gray-400">Technical Assessment</span>
+                                            </div>
+                                            <p class="text-gray-900 font-medium">Can you explain your approach to solving complex technical challenges?</p>
+                                            <div class="flex items-center space-x-2 text-xs text-gray-500">
+                                                <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span>Expected response time: 2-3 minutes</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Response Recording -->
+                                        <div class="space-y-4">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center space-x-3">
+                                                    <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center animate-pulse">
+                                                        <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text-sm font-medium text-gray-900">Recording in progress...</span>
+                                                </div>
+                                                <span class="text-xs font-medium text-gray-500">01:45</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                                                <div class="h-full w-3/4 bg-blue-500 rounded-full animate-pulse"></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Real-time Analysis -->
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div class="bg-gray-50 rounded-xl p-4">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <span class="text-xs font-medium text-gray-500">Communication</span>
+                                                    <span class="text-xs font-medium text-blue-600">92%</span>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="text-sm font-medium text-blue-600">Clear & Structured</span>
+                                                </div>
+                                            </div>
+                                            <div class="bg-gray-50 rounded-xl p-4">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <span class="text-xs font-medium text-gray-500">Technical Depth</span>
+                                                    <span class="text-xs font-medium text-blue-600">88%</span>
+                                                </div>
+                                                <div class="flex items-center space-x-2">
+                                                    <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="text-sm font-medium text-blue-600">Advanced</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Wave divider -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,90.7C672,107,768,117,864,112C960,107,1056,85,1152,74.7C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- How it works section with consistent styling -->
+        <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900">How it works</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        InterviewAI handles your interviews end-to-end, from screening to final rounds. Your team only speaks with candidates worth their time.
+                    </p>
+                </div>
+
+                <div class="grid gap-12 md:grid-cols-3">
+                    <div class="relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="absolute -top-6 left-8">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                                1
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Configure your AI interviewer</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Customize communication style, question templates, and evaluation criteria specific to your industry and role.
+                        </p>
+                    </div>
+
+                    <div class="relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="absolute -top-6 left-8">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                                2
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Candidates interview with AI</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Candidates join a video call with your AI interviewer that adapts questions based on their responses.
+                        </p>
+                    </div>
+
+                    <div class="relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+                        <div class="absolute -top-6 left-8">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                                3
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-4">Get actionable insights</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Receive detailed analysis on skills, problem-solving approach, and communication ability—all tailored to your needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries section with improved icons -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900">Trusted across industries</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Our adaptable platform serves organizations of all sizes across diverse sectors.
+                    </p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Technology -->
+                    <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Technology</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            From software engineers to product managers, assess technical and soft skills efficiently.
+                        </p>
+                    </div>
+
+                    <!-- Finance -->
+                    <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Finance</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Evaluate financial acumen, regulatory knowledge, and client communication skills.
+                        </p>
+                    </div>
+
+                    <!-- Healthcare -->
+                    <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Healthcare</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Screen medical professionals with specialized knowledge assessments and situational judgment.
+                        </p>
+                    </div>
+
+                    <!-- Retail -->
+                    <div class="p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Retail</h3>
+                        <p class="mt-4 text-gray-600 leading-relaxed">
+                            Evaluate customer service skills, sales aptitude, and inventory management knowledge.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product showcase -->
+        <section id="product" class="py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex md:items-start md:space-x-16">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-900">Full control over your AI interviewer</h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Our platform gives hiring managers complete flexibility in how candidates are evaluated. Configure once, then scale indefinitely.
+                        </p>
+                        <ul class="mt-8 space-y-6">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-gray-600">Adjust communication style to match your company culture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-gray-600">Weight skills based on what matters most for each role</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-gray-600">Enable dynamic question adaptation to candidate responses</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Updated UI mockup -->
+                    <div class="mt-10 md:mt-0 md:w-1/2">
+                        <div class="bg-white rounded-xl shadow-xl p-6">
+                            <!-- AI Interviewer Configuration Interface -->
+                            <div class="space-y-6">
+                                <!-- Header -->
+                                <div class="flex items-center justify-between pb-4 border-b">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-sm font-medium text-gray-900">AI Interviewer Settings</h3>
+                                            <p class="text-xs text-gray-500">Software Engineer Role</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-sm text-blue-600 font-medium hover:text-blue-700">Save Changes</button>
+                                </div>
+
+                                <!-- Communication Style -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Communication Style</label>
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <button class="px-4 py-2 border-2 border-blue-600 rounded-lg text-sm font-medium text-blue-600 bg-blue-50">Professional</button>
+                                        <button class="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600">Casual</button>
+                                        <button class="px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-600">Technical</button>
+                                    </div>
+                                </div>
+
+                                <!-- Skill Weights -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-3">Skill Importance</label>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <span class="text-sm text-gray-600">Technical Skills</span>
+                                                <span class="text-sm font-medium text-gray-900">80%</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-100 rounded-full">
+                                                <div class="h-2 bg-blue-600 rounded-full" style="width: 80%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <span class="text-sm text-gray-600">Problem Solving</span>
+                                                <span class="text-sm font-medium text-gray-900">65%</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-100 rounded-full">
+                                                <div class="h-2 bg-blue-600 rounded-full" style="width: 65%"></div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex items-center justify-between mb-1">
+                                                <span class="text-sm text-gray-600">Communication</span>
+                                                <span class="text-sm font-medium text-gray-900">55%</span>
+                                            </div>
+                                            <div class="h-2 bg-gray-100 rounded-full">
+                                                <div class="h-2 bg-blue-600 rounded-full" style="width: 55%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question Adaptation -->
+                                <div>
+                                    <div class="flex items-center justify-between mb-3">
+                                        <label class="block text-sm font-medium text-gray-700">Dynamic Questions</label>
+                                        <button class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none bg-blue-600">
+                                            <span class="translate-x-5 inline-block h-5 w-5 rounded-full bg-white shadow transform"></span>
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-gray-500">Questions will automatically adjust based on candidate responses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data-driven section -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex md:items-start md:space-x-24">
+                    <!-- Left side - Performance UI -->
+                    <div class="md:w-1/2">
+                        <div class="bg-white rounded-xl shadow-xl p-8">
+                            <div class="flex justify-between items-center mb-10">
+                                <h3 class="text-xl font-medium text-gray-900">Candidate Performance</h3>
+                                <div class="flex space-x-3">
+                                    <button class="px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-blue-600">Technical</button>
+                                    <button class="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium text-gray-600">Soft Skills</button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-8">
+                                <!-- Candidate Scores -->
+                                <div class="space-y-6">
+                                    <div class="relative">
+                                        <div class="flex items-center">
+                                            <span class="w-28 text-sm font-medium text-gray-600">Candidate A</span>
+                                            <div class="flex-1 h-10 bg-gray-100 rounded-full overflow-hidden">
+                                                <div class="h-full bg-blue-500 rounded-full" style="width: 85%">
+                                                    <span class="px-4 text-white text-sm font-medium leading-10">8.5/10</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <div class="flex items-center">
+                                            <span class="w-28 text-sm font-medium text-gray-600">Candidate B</span>
+                                            <div class="flex-1 h-10 bg-gray-100 rounded-full overflow-hidden">
+                                                <div class="h-full bg-blue-500 rounded-full" style="width: 92%">
+                                                    <span class="px-4 text-white text-sm font-medium leading-10">9.2/10</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Question Effectiveness -->
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="bg-gray-50 rounded-xl p-5">
+                                        <div class="text-sm font-medium text-gray-500">System Design</div>
+                                        <div class="mt-2 text-xl font-semibold text-blue-600">92% effective</div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-xl p-5">
+                                        <div class="text-sm font-medium text-gray-500">Problem Solving</div>
+                                        <div class="mt-2 text-xl font-semibold text-blue-600">88% effective</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side - Header and Features list -->
+                    <div class="md:w-1/2 mt-12 md:mt-0">
+                        <!-- Header -->
+                        <div class="mb-12">
+                            <h2 class="text-3xl font-bold text-gray-900">Data-driven hiring decisions</h2>
+                            <p class="mt-4 text-lg text-gray-600">
+                                Make confident hiring decisions backed by standardized metrics and insights
+                            </p>
+                        </div>
+
+                        <!-- Features list -->
+                        <ul class="space-y-8">
+                            <li class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600">Compare candidates on standardized metrics</span>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600">Track question effectiveness across different roles</span>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <div class="flex-shrink-0">
+                                    <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <span class="text-lg text-gray-600">Improve interview efficiency with actionable insights</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Companies that hire better with InterviewAI</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        See what our customers have achieved
+                    </p>
+                </div>
+                
+                <div class="mt-12 grid gap-6 md:grid-cols-3">
+                    <div class="float-card bg-white p-6 rounded-lg shadow">
+                        <p class="text-gray-600 italic">
+                            "We cut our interview time by 65% while improving the quality of hires. Our team can focus on core responsibilities instead of screening candidates."
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-medium">
+                                    SC
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Sarah Chen</p>
+                                <p class="text-sm text-gray-500">VP of Talent, National Bank</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="float-card bg-white p-6 rounded-lg shadow">
+                        <p class="text-gray-600 italic">
+                            "InterviewAI standardized our assessment process across five hospitals. We can now confidently compare healthcare candidates regardless of location."
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-medium">
+                                    DR
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Dr. Michael Rodriguez</p>
+                                <p class="text-sm text-gray-500">Chief of Staff, Metropolitan Health</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="float-card bg-white p-6 rounded-lg shadow">
+                        <p class="text-gray-600 italic">
+                            "As a retail chain with 200+ stores, consistent hiring was impossible before InterviewAI. Now we maintain quality standards across all locations."
+                        </p>
+                        <div class="mt-4 flex items-center">
+                            <div class="flex-shrink-0">
+                                <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-medium">
+                                    JW
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">Jennifer Williams</p>
+                                <p class="text-sm text-gray-500">Director of Operations, ValueMart</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Move Pricing section here -->
+        <section id="pricing" class="py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Simple, transparent pricing</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Pay only for what you use. No long-term contracts required.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-8 lg:grid-cols-3">
+                    <!-- Basic Plan -->
+                    <div class="float-card bg-white p-8 rounded-lg shadow border border-gray-200">
+                        <h3 class="text-xl font-medium text-gray-900">Basic</h3>
+                        <p class="mt-4 text-5xl font-bold text-gray-900">$499<span class="text-xl font-normal text-gray-500">/mo</span></p>
+                        <p class="mt-2 text-sm text-gray-500">Up to 20 interviews per month</p>
+                        
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Full AI interviewer customization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Basic analytics dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Standard question templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Email support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="mt-8 block w-full py-3 px-4 text-center font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            Get started
+                        </a>
+                    </div>
+                    
+                    <!-- Professional Plan -->
+                    <div class="float-card bg-white p-8 rounded-lg shadow-lg border-2 border-blue-500 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                            Most popular
+                        </div>
+                        <h3 class="text-xl font-medium text-gray-900">Professional</h3>
+                        <p class="mt-4 text-5xl font-bold text-gray-900">$1,299<span class="text-xl font-normal text-gray-500">/mo</span></p>
+                        <p class="mt-2 text-sm text-gray-500">Up to 75 interviews per month</p>
+                        
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Everything in Basic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Advanced candidate analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Industry-specific question libraries</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">ATS integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Priority support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="mt-8 block w-full py-3 px-4 text-center font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            Get started
+                        </a>
+                    </div>
+                    
+                    <!-- Enterprise Plan -->
+                    <div class="float-card bg-white p-8 rounded-lg shadow border border-gray-200">
+                        <h3 class="text-xl font-medium text-gray-900">Enterprise</h3>
+                        <p class="mt-4 text-2xl font-bold text-gray-900">Custom pricing</p>
+                        <p class="mt-2 text-sm text-gray-500">For high-volume or multi-industry needs</p>
+                        
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Everything in Professional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Custom AI model training</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">Dedicated success manager</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-2 text-gray-600">24/7 phone & email support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="https://calendly.com/sakethk/intro?back=1&month=2025-02" class="mt-8 block w-full py-3 px-4 text-center font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            Contact sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section follows pricing -->
+        <section class="py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Get answers to common questions about InterviewAI
+                    </p>
+                </div>
+
+                <div class="mt-12 max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="float-card bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-medium text-gray-900">How does the AI interviewer work?</h3>
+                            <p class="mt-2 text-gray-600">
+                                Our AI interviewer uses advanced natural language processing to conduct dynamic video interviews. It adapts questions based on candidate responses while maintaining consistent evaluation criteria.
+                            </p>
+                        </div>
+
+                        <div class="float-card bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-medium text-gray-900">Is the platform secure and compliant?</h3>
+                            <p class="mt-2 text-gray-600">
+                                Yes, InterviewAI is SOC 2 Type II certified and GDPR compliant. We use enterprise-grade encryption and follow strict data protection protocols.
+                            </p>
+                        </div>
+
+                        <div class="float-card bg-white rounded-lg shadow p-6">
+                            <h3 class="text-lg font-medium text-gray-900">Can we integrate with our existing ATS?</h3>
+                            <p class="mt-2 text-gray-600">
+                                InterviewAI integrates seamlessly with major ATS providers including Workday, Greenhouse, and Lever. Custom integrations are available for Enterprise clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Documentation</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">API Reference</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400">&copy; 2024 InterviewAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
