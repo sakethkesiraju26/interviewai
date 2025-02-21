@@ -165,7 +165,7 @@
                                     <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                                     </svg>
-                                    <span class="text-white">Custom AI interviewers</span><span class="text-blue-200">—no-code or with code</span>
+                                    <span class="text-white">Custom AI interviewers</span>
                                 </li>
                                 <li class="flex items-center">
                                     <svg class="w-5 h-5 mr-3 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -312,32 +312,31 @@
                     </div>
                 </div>
             </div>
-            <!-- Wave divider -->
-            <div class="absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#ffffff" d="M0,96L48,85.3C96,75,192,53,288,53.3C384,53,480,75,576,90.7C672,107,768,117,864,112C960,107,1056,85,1152,74.7C1248,64,1344,64,1392,64L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
-                </svg>
-            </div>
         </section>
 
         <!-- How it works section -->
-        <section class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-            <div class="absolute inset-0 pattern-bg opacity-5"></div>
-            
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <section class="py-24 bg-white relative">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">How it works</h2>
                     <p class="mt-4 text-lg text-gray-600">
                         InterviewAI handles your interviews end-to-end, from screening to final rounds. Your team only speaks with candidates worth their time.
                     </p>
+                    <!-- Add the image here -->
+                    <img 
+                        src="images/ai-interviewer-interface.jpg" 
+                        alt="InterviewAI Process Flow" 
+                        class="mt-8 rounded-xl shadow-xl w-full max-w-4xl mx-auto"
+                        loading="lazy"
+                    >
                 </div>
 
-                <div class="grid gap-16 md:grid-cols-3 relative">
+                <div class="grid gap-12 md:grid-cols-3 relative max-w-4xl mx-auto mt-24">
                     <!-- Connecting line -->
                     <div class="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 transform -translate-y-1/2 z-0"></div>
 
                     <!-- Step 1 -->
-                    <div class="relative bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
+                    <div class="relative bg-white rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
                         <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
                             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                                 1
@@ -359,7 +358,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div class="relative bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
+                    <div class="relative bg-white rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
                         <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
                             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                                 2
@@ -381,7 +380,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="relative bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
+                    <div class="relative bg-white rounded-2xl shadow-xl p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl z-10">
                         <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
                             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
                                 3
@@ -402,11 +401,52 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Add AI Interviewer Preview -->
+                <div class="mt-20 max-w-3xl mx-auto">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- Remove this entire video interface mockup -->
+                        <!-- <div class="aspect-w-16 aspect-h-9 bg-gray-900">
+                            <img 
+                                src="/images/ai-interviewer-interface.jpg" 
+                                alt="AI Video Interview Interface" 
+                                class="object-cover"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent">
+                                <div class="flex items-center justify-center space-x-4">
+                                    <button class="p-2 rounded-full bg-navy-800/80 text-white hover:bg-navy-700">
+                                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 rounded-full bg-navy-800/80 text-white hover:bg-navy-700">
+                                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 rounded-full bg-navy-800/80 text-white hover:bg-navy-700">
+                                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 rounded-full bg-red-500 text-white hover:bg-red-600">
+                                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 px-3 py-1 rounded-lg bg-black/50 text-white text-sm">
+                                Time Remaining: 1:13
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Product showcase -->
-        <section id="product" class="py-16">
+        <section id="product" class="py-24 bg-gray-50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="md:flex md:items-start md:space-x-16">
                     <div class="md:w-1/2">
