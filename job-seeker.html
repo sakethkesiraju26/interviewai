@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewAI - Take Your Interview</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Pattern background */
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Refined text gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Smooth transitions */
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Card hover effects */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Enterprise-style button */
+        .enterprise-button {
+            background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+            transition: all 0.3s ease;
+        }
+        .enterprise-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-lg font-bold text-purple-600 logo">InterviewAI</a>
+                    
+                    <!-- Add the toggle switch -->
+                    <div class="hidden md:flex items-center bg-gray-100 rounded-lg p-1">
+                        <a href="index.html" class="px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900">
+                            Need to Hire
+                        </a>
+                        <button class="px-4 py-2 rounded-md text-sm font-medium bg-white text-purple-600 shadow-sm">
+                            Need a Job
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="https://form.typeform.com/to/aj30u4Zu" 
+                       class="px-4 py-2 text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300">
+                        Take Your Interview
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <!-- Add mobile toggle -->
+                    <div class="flex bg-gray-100 rounded-lg p-1 mb-2">
+                        <a href="index.html" class="flex-1 px-3 py-2 rounded-md text-sm font-medium text-gray-600">
+                            Need to Hire
+                        </a>
+                        <a href="https://form.typeform.com/to/aj30u4Zu" class="flex-1 px-3 py-2 rounded-md text-sm font-medium bg-white text-purple-600 shadow-sm">
+                            Need a Job
+                        </a>
+                    </div>
+                    <a href="https://form.typeform.com/to/aj30u4Zu" 
+                       class="block px-3 py-2 rounded-md text-base font-medium text-white bg-purple-600 hover:bg-purple-700 cta-button">
+                        Take Your Interview
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Job seeker hero section -->
+        <section class="relative overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-indigo-700 py-32 md:py-40">
+                <div class="pattern-bg absolute inset-0 opacity-10"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <!-- Main Content -->
+                    <div class="text-center max-w-4xl mx-auto mb-16">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white leading-none">
+                            One Interview, Multiple Offers
+                        </h1>
+                        <p class="mt-8 text-xl md:text-2xl text-purple-100 leading-relaxed">
+                            Take one 30-minute AI interview. We'll match you with companies looking for exactly your skills and experience.
+                        </p>
+                        <p class="mt-4 text-lg text-purple-200">
+                            Join 200+ people that have used InterviewAI to land a job
+                        </p>
+                        
+                        <div class="mt-10">
+                            <a href="https://form.typeform.com/to/aj30u4Zu" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-xl bg-white text-purple-600 hover:bg-purple-50 transition-all shadow-lg hover:shadow-xl">
+                                Take Your Interview
+                                <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Job Cards -->
+                    <div class="max-w-4xl mx-auto">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <!-- Software Engineer Card -->
+                            <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 transform hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+                                        <p class="text-purple-200 mt-1">Remote • Full-time</p>
+                                    </div>
+                                    <span class="text-lg font-semibold text-white">$150-180k</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Product Manager Card -->
+                            <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 transform hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white">Product Manager</h3>
+                                        <p class="text-purple-200 mt-1">Remote • Full-time</p>
+                                    </div>
+                                    <span class="text-lg font-semibold text-white">$140-165k</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Data Scientist Card -->
+                            <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 transform hover:-translate-y-1 transition-all duration-300">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white">Data Scientist</h3>
+                                        <p class="text-purple-200 mt-1">Hybrid • Full-time</p>
+                                    </div>
+                                    <span class="text-lg font-semibold text-white">$160-190k</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-purple-200 mt-4 text-center">Updated just now</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">How it works</h2>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-purple-600">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Complete one AI interview</h3>
+                        <p class="text-gray-600">Our adaptive AI assesses your skills, experience, and working style in just 30 minutes.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-purple-600">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Get matched automatically</h3>
+                        <p class="text-gray-600">Our algorithm connects you to companies seeking your exact skills and experience.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-purple-600">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Receive interview requests</h3>
+                        <p class="text-gray-600">Companies reach out directly - skip the application black hole.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart Interview Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">Smart interview, intelligent matching</h2>
+                
+                <div class="md:flex md:items-start md:space-x-16">
+                    <!-- Left: Chat Interface -->
+                    <div class="md:w-1/2">
+                        <div class="bg-white rounded-xl shadow-xl overflow-hidden h-full">
+                            <!-- Chat Header -->
+                            <div class="bg-purple-50 px-6 py-4 border-b border-purple-100">
+                                <div class="flex items-center space-x-3">
+                                    <div class="h-10 w-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">AI Interview Session</h3>
+                                        <p class="text-sm text-gray-600">Technical Role Assessment</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chat Messages -->
+                            <div class="p-6 space-y-4">
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <p class="text-gray-800">Hi, welcome to your InterviewAI interview! I'm excited to learn more about your background.</p>
+                                </div>
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <p class="text-gray-800">Let's discuss your technical experience. Can you tell me about a complex problem you solved?</p>
+                                </div>
+                                <div class="bg-purple-600 rounded-lg p-4 ml-auto max-w-[80%]">
+                                    <p class="text-white">Great answer! Now let's talk about your ideal work environment...</p>
+                                </div>
+                            </div>
+
+                            <!-- Chat Footer -->
+                            <div class="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                                <a href="https://form.typeform.com/to/aj30u4Zu" 
+                                   class="inline-flex items-center text-purple-600 font-medium hover:text-purple-700">
+                                    Try a practice interview
+                                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Job Cards -->
+                    <div class="mt-12 md:mt-0 md:w-1/2">
+                        <div class="space-y-4 h-full flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-xl shadow-lg p-6">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Software Engineer</h3>
+                                            <div class="flex items-center mt-2">
+                                                <span class="text-purple-600">Remote</span>
+                                                <span class="mx-2 text-gray-300">•</span>
+                                                <span class="text-gray-600">Full-time</span>
+                                            </div>
+                                        </div>
+                                        <span class="text-xl font-semibold text-purple-600">$150-180k</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl shadow-lg p-6">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Product Manager</h3>
+                                            <div class="flex items-center mt-2">
+                                                <span class="text-purple-600">Remote</span>
+                                                <span class="mx-2 text-gray-300">•</span>
+                                                <span class="text-gray-600">Full-time</span>
+                                            </div>
+                                        </div>
+                                        <span class="text-xl font-semibold text-purple-600">$140-165k</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white rounded-xl shadow-lg p-6">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Data Scientist</h3>
+                                            <div class="flex items-center mt-2">
+                                                <span class="text-purple-600">Hybrid</span>
+                                                <span class="mx-2 text-gray-300">•</span>
+                                                <span class="text-gray-600">Full-time</span>
+                                            </div>
+                                        </div>
+                                        <span class="text-xl font-semibold text-purple-600">$160-190k</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-500 text-right">Updated just now</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">For every career stage</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Technical roles -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Technical roles</h3>
+                        <p class="text-gray-600">From junior developers to senior architects, get matched with the perfect engineering opportunity.</p>
+                    </div>
+
+                    <!-- Business & operations -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Business & operations</h3>
+                        <p class="text-gray-600">Sales, marketing, product, and operations roles at fast-growing companies.</p>
+                    </div>
+
+                    <!-- Creative professionals -->
+                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Creative professionals</h3>
+                        <p class="text-gray-600">Design, content, and creative opportunities with top brands.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://form.typeform.com/to/aj30u4Zu" 
+                       class="inline-flex justify-center items-center px-6 py-3 text-base font-medium rounded-lg text-purple-600 border border-purple-200 hover:bg-purple-50 transition-all">
+                        Quick Apply
+                        <svg class="ml-2 -mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="py-24 bg-gradient-to-r from-purple-600 to-indigo-700">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to transform your job search?</h2>
+                <p class="text-xl text-purple-200 mb-12">Take one interview and get matched with your dream job today.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://form.typeform.com/to/aj30u4Zu" 
+                       class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-purple-600 hover:bg-purple-50 transition-all shadow-lg hover:shadow-xl">
+                        Take Your Interview
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="https://form.typeform.com/to/aj30u4Zu" class="text-base text-gray-500 hover:text-gray-900">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Security</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Documentation</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Guides</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2023 InterviewAI. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html> 
