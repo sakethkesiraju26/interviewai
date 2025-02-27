@@ -143,7 +143,7 @@
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
                 <div className="flex items-center space-x-8">
-                    <span className="text-lg font-bold text-blue-600 logo">InterviewAI</span>
+                    <span className="text-lg font-bold text-purple-600 logo">InterviewAI</span>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -158,13 +158,11 @@
 
                 <!-- Desktop navigation -->
                 <nav className="hidden md:flex items-center space-x-4">
-                    <a href="job-seeker.html" 
-                       className="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300">
-                        For Job Seekers
+                    <a href="/" className="px-4 py-2 text-sm font-medium rounded-md border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-300">
+                        For Employers
                     </a>
-                    <a href="https://form.typeform.com/to/aj30u4Zu" 
-                       className="px-4 py-2 text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
-                        Start Hiring
+                    <a href="https://form.typeform.com/to/aj30u4Zu" className="px-4 py-2 text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors duration-300">
+                        Take Your Interview
                     </a>
                 </nav>
             </div>
@@ -172,14 +170,12 @@
             <!-- Mobile menu -->
             <div className="md:hidden hidden mobile-menu">
                 <div className="px-2 pt-2 pb-3 space-y-1">
-                    <a href="job-seeker.html" 
-                       className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                        For Job Seekers
+                    <a href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                        For Employers
                     </a>
                     <a href="#product" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 product-link">Product</a>
-                    <a href="https://form.typeform.com/to/aj30u4Zu" 
-                       className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 cta-button">
-                        Start Hiring
+                    <a href="https://form.typeform.com/to/aj30u4Zu" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-purple-600 hover:bg-purple-700 cta-button">
+                        Take Your Interview
                     </a>
                 </div>
             </div>
@@ -234,8 +230,8 @@
                                 <div className="mt-10">
                                     <div className="flex flex-col sm:flex-row gap-4">
                                         <a href="https://form.typeform.com/to/aj30u4Zu" 
-                                           className="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-blue-600 hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl">
-                                            Start Hiring
+                                           className="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-lg bg-white text-purple-600 hover:bg-purple-50 transition-all shadow-lg hover:shadow-xl">
+                                            Take Your Interview
                                             <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                             </svg>
@@ -364,13 +360,13 @@
                         <p className="mt-4 text-lg text-gray-600">
                             InterviewAI handles your interviews end-to-end, from screening to final rounds. Your team only speaks with candidates worth their time.
                         </p>
-                        <!-- Add the image here -->
-                        <img 
-                            src="images/ai-interviewer-interface.jpg" 
-                            alt="InterviewAI Process Flow" 
+                        <Image 
+                            src="/images/ai-interviewer-interface.jpg" 
+                            alt="AI Interviewer Interface" 
                             className="mt-8 rounded-xl shadow-xl w-full max-w-4xl mx-auto"
-                            loading="lazy"
-                        >
+                            width={500}
+                            height={300}
+                        />
                     </div>
 
                     <div className="grid gap-12 md:grid-cols-3 relative max-w-4xl mx-auto mt-24">
@@ -833,7 +829,7 @@
                                    className="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-xl 
                                           bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 
                                           transform hover:-translate-y-1 shadow-lg hover:shadow-2xl">
-                                    Start Hiring
+                                    Take Your Interview
                                     <svg className="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
